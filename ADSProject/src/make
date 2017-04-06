@@ -1,0 +1,25 @@
+JFLAGS = -g
+JC = javac
+.SUFFIXES: .java .class
+.java.class: 
+	$(JC) $(JFLAGS) $*.java
+
+CLASSES = \
+        Node.java \
+        PairingNode.java \
+        HuffmanNode.java \
+        BinaryHeap.java \
+		FourWayHeap.java \
+		FileReadWrite.java \
+		CompareHeaps.java \
+		encoder.java \
+		decoder.java \
+	PairingHeap.java
+		
+MAIN = Encoder
+
+default: classes
+
+classes: $(CLASSES:.java=.class)
+
+clean: $(RM) *.class
